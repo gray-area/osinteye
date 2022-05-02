@@ -25,7 +25,11 @@ class osintEye:
 			self.url = f'https://pypi.org/user/{args.username}'
 		elif args.testpypi:
 			self.url = f'https://test.pypi.org/user/{args.username}'
-		
+		elif args.twitter:
+			self.url = f'https://www.twitter.com/{args.username}/?__a=1'
+		elif args.facebook:
+			self.url = f'https://www.facebook.com/{args.username}/?__a=1'
+
 	def main(self):
 		if args.about:
 			about_me.about_me(self)
@@ -39,6 +43,10 @@ class osintEye:
 			pypi.pypi(self,args)
 		elif args.testpypi:
 			testpypi.testpypi(self,args)
+		elif args.twitter:
+			twitter.twitter(self,args)
+		elif args.facebook:
+			facebook.facebook(self,args)
 		else:
 		    exit(f'{white}osint{red}eye{white}: use {green}-h{white} or {green}--help{white} to show usage.{reset}')
 	                                                          
@@ -51,6 +59,8 @@ parser.add_argument('--about',help='search on about.me',action='store_true')
 parser.add_argument('--github',help='search on github',action='store_true')
 parser.add_argument('--instagram',help='search on instagram',action='store_true')
 parser.add_argument('--dockerhub',help='search on dockerhub',action='store_true')
+parser.add_argument('--twitter',help='search on twitter',action='store_true')
+parser.add_argument('--facebook',help='search on facebook',action='store_true')
 parser.add_argument('-v', '--verbose', help='enable verbosity',action='store_true')
 parser.add_argument('--version',version=f'v1.3.0 Released on 21st March 2022',action='version')
 args = parser.parse_args()
