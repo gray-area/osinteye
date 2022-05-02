@@ -26,9 +26,9 @@ class osintEye:
 		elif args.testpypi:
 			self.url = f'https://test.pypi.org/user/{args.username}'
 		elif args.twitter:
-			self.url = f'https://www.twitter.com/{args.username}/?__a=1'
+			self.url = f'https://www.twitter.com/{args.username}'
 		elif args.facebook:
-			self.url = f'https://www.facebook.com/{args.username}/?__a=1'
+			self.url = f'https://www.facebook.com/{args.username}'
 
 	def main(self):
 		if args.about:
